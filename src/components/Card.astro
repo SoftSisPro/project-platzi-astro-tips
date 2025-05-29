@@ -1,10 +1,10 @@
 ---
 // JS
 export interface Props {
-	title?: string;
-	date?: string;
+	title: string;
+	date: string;
 	tags: string[];
-	href?: string;
+	href: string;
 }
 
 const { title, date, tags, href } = Astro.props;
@@ -15,10 +15,10 @@ const { title, date, tags, href } = Astro.props;
 	class="rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:shadow-sm"
 >
 	<div class="rounded-[10px] bg-white p-4 !pt-10 sm:p-6">
-		<time datetime="{date}" class="block text-xs text-gray-500">
+		<time datetime={date} class="block text-xs text-gray-500">
 			{date}
 		</time>
-		<a href="{href}">
+		<a href={href}>
 			<h3 class="mt-0.5 text-lg font-medium text-gray-900">
 				{title}
 			</h3>

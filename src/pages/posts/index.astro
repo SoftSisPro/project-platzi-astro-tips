@@ -1,0 +1,49 @@
+---
+import Card from "../../components/Card.astro";
+import Hero from "../../components/Hero.astro";
+import Header from "../../components/Header.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type Tip = CollectionEntry<"tips">;
+
+const posts = (await getCollection("tips")).sort(
+	(a: Tip, b: Tip) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Mis Posts">
+	<main>
+		<Header title="Mis Posts" />
+		<Hero />
+		<ul role="list" class="link-card-grid">
+			{
+				posts.map((post: Tip) => (
+					<Card
+						title={post.data?.title}
+						date={post.data?.pubDate}
+						tags={post.data?.tags}
+						href={`posts/${post.slug}`}
+					/>
+				))
+			}
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	
+	
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

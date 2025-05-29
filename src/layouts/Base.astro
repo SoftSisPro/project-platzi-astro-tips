@@ -1,29 +1,26 @@
 ---
-import './src/styles/global.css'
+import "./src/styles/global.css";
 
 export interface Props {
-  title?: string;
-  frontmatter?: {
-    title?: string;
-  };
+	title?: string;
+	frontmatter?: {
+		title?: string;
+	};
 }
 // Modifica esta línea para manejar también el frontmatter
 const { title = Astro.props.frontmatter?.title || "Untitled" } = Astro.props;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-</head>
-<body class="bg-slate-900 text-slate-400">
-    <div class="flex-block max-w-xl p-4 md:pd-8 mx-auto mt-4">
-        <div class="bg-white shadow rounded-lg p-4">
-            <slot />
-        </div>
-    </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="h-screen">
+		<slot />
+	</body>
 </html>
