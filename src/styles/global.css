@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+    --accent-gradient: linear-gradient(45deg, #f72585, #4361ee);
+    --accent: 247, 37, 133;
+}
