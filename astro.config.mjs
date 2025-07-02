@@ -5,12 +5,14 @@ import tailwindcss from "@tailwindcss/vite";
 // Import MDX support
 import mdx from "@astrojs/mdx";
 
+import react from "@astrojs/react";
+
 export default defineConfig({
-	vite: {
-		plugins: [tailwindcss()],
-	},
-	integrations: [mdx()],
-	legacy: {
-		collections: true
-	}
+    vite: {
+        plugins: [tailwindcss()],
+    },
+    integrations: [mdx(), react()],
+    legacy: {
+        collections: true
+    }
 });
