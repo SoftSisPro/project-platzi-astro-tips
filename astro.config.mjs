@@ -7,11 +7,13 @@ import mdx from "@astrojs/mdx";
 
 import react from "@astrojs/react";
 
+import vue from "@astrojs/vue";
+
 export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [mdx(), react()],
+    integrations: [mdx(), react(), vue()],
     legacy: {
         collections: true
     }

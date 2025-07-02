@@ -24,7 +24,7 @@ const posts = (await getCollection("tips")).sort(
 						title={post.data?.title}
 						date={post.data?.pubDate}
 						tags={post.data?.tags}
-						href={`posts/${post.slug}`}
+						href={`${post.slug}`}
 					/>
 				))
 			}
