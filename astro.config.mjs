@@ -10,13 +10,15 @@ import react from "@astrojs/react";
 import vue from "@astrojs/vue";
 // Import Svelte support
 import svelte from "@astrojs/svelte";
+// Import Sitemap generation
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
     site: "https://astrobuild.tips",
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [mdx(), react(), vue(), svelte()],
+    integrations: [mdx(), react(), vue(), svelte(), sitemap()],
     legacy: {
         collections: true
     }
