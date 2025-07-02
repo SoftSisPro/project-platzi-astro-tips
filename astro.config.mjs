@@ -12,6 +12,7 @@ import vue from "@astrojs/vue";
 import svelte from "@astrojs/svelte";
 
 export default defineConfig({
+    site: "https://astrobuild.tips",
     vite: {
         plugins: [tailwindcss()],
     },

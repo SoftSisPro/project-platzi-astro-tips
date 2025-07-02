@@ -1,4 +1,5 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
 import "../styles/global.css";
 
 export interface Props {
@@ -13,13 +14,7 @@ const { title = Astro.props.frontmatter?.title || "Untitled" } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
+	<BaseHead title="AstroTips" description="My First Pagen in Astro - Softsispro.com" />
 	<body class="h-screen">
 		<slot />
 	</body>

@@ -1,0 +1,42 @@
+---
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Favicons y App Icons -->
+  <link rel="icon" href="image/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="image/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png" />
+  <link rel="manifest" href="image/manifest.webmanifest" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="es" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://tusitio.com/imagen-og.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://tusitio.com/imagen-og.jpg" />
+  <meta name="twitter:image:alt" content={title} />
+  <meta name="twitter:site" content="@softsispro" />
+  <meta name="twitter:creator" content="@softsispro" />
+</head>
